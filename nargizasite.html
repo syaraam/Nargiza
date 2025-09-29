@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Merhaba — Наргиза · Переезд в Турцию</title>
+
+<!-- Шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Playfair+Display:ital,wght@0,400;1,500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#3B0A0A;
+    --card:#ffda99;
+    --beige:#602e00;
+    --bordo:#8f5801;
+    --sun:#3B0A0A;
+    --ink:#F5F5DC;
+    --muted:#CBBFAD;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  .site{max-width:1200px;margin:36px auto;padding:28px;display:flex;gap:28px;align-items:flex-start}
+  @media(max-width:1000px){.site{flex-direction:column;padding:18px}}
+
+  .board{
+    flex:1;
+    background: var(--card);
+    border-radius:20px;padding:26px;
+    box-shadow:0 14px 40px rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,0.1);
+  }
+
+  .hero{display:flex;gap:24px;align-items:center;margin-bottom:22px}
+  @media(max-width:820px){.hero{flex-direction:column;align-items:stretch}}
+
+  .hero-left{flex:1;min-width:0}
+  .kicker{font-family:Montserrat,sans-serif;font-weight:600;color:var(--sun);font-size:12px;letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
+  .title{
+    font-family:Montserrat,sans-serif;font-weight:800;font-size:56px;line-height:0.95;color:var(--sun);
+    margin:0 0 12px;letter-spacing:1px;text-transform:uppercase;
+  }
+  @media(max-width:820px){.title{font-size:34px;text-align:center}}
+
+  .lead{
+    font-family:'Playfair Display',serif;font-style:italic;color:var(--beige);font-size:18px;margin:0 0 18px;max-width:720px;
+  }
+  @media(max-width:820px){.lead{text-align:center}}
+
+  .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;font-weight:700;font-family:Montserrat,sans-serif;cursor:pointer;border:0;transition:transform .22s,box-shadow .22s}
+  .btn-primary{background:var(--sun);color:var(--bordo);box-shadow:0 10px 30px rgba(255,215,0,0.2)}
+  .btn-primary:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(255,215,0,0.35)}
+  .btn-soft{background:transparent;border:1px solid var(--beige);color:var(--beige)}
+
+  .hero-right{width:340px;flex-shrink:0;border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 18px 40px rgba(0,0,0,0.2);border:1px solid rgba(0,0,0,0.1)}
+  .profile{height:260px;background-size:cover;background-position:center}
+  .profile-meta{padding:14px}
+  .profile-meta h4{margin:0;font-family:Playfair Display,serif;color:var(--bordo);font-size:18px}
+  .profile-meta p{margin:8px 0 0;color:var(--bordo);font-size:13px}
+
+  /* Быстрая анимация для карточки Наргизы */
+  .float{
+    opacity:0;
+    transform:translateY(40px) scale(0.95);
+    animation: floatIn 1s ease forwards, floaty 1.5s ease-in-out infinite;
+  }
+  @keyframes floatIn{
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+  @keyframes floaty{
+    0%,100%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-10px) scale(1.02);}
+  }
+
+  .masonry{column-count:3;column-gap:18px;margin-top:18px}
+  .pin{
+    display:inline-block;width:100%;margin:0 0 18px;border-radius:14px;overflow:hidden;background:var(--card);
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);transition:transform .35s,box-shadow .35s,filter .35s;opacity:0;transform:translateY(28px)
+  }
+  .pin.show{opacity:1;transform:none}
+  .pin img{width:100%;display:block;height:auto;transition:transform .6s ease}
+  .pin:hover{transform:translateY(-10px);box-shadow:0 28px 80px rgba(0,0,0,0.35);filter:brightness(1.02)}
+  .pin:hover img{transform:scale(1.06)}
+  .pin-body{padding:14px}
+  .pin-title{font-family:Montserrat,sans-serif;font-weight:700;font-size:16px;margin:0;color:var(--bordo)}
+  .pin-desc{margin-top:6px;font-size:13px;color:var(--bordo)}
+
+  @media(max-width:1000px){.masonry{column-count:2}}
+  @media(max-width:640px){.masonry{column-count:1}.hero-right{width:100%}}
+
+  .sidebar{width:320px;flex-shrink:0;display:flex;flex-direction:column;gap:18px}
+  @media(max-width:980px){.sidebar{width:100%}}
+
+  .panel{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 18px 44px rgba(0,0,0,0.25)}
+  .panel h5{margin:0;font-family:Montserrat,sans-serif;font-weight:700;color:var(--bordo)}
+  .panel p{margin-top:10px;color:var(--bordo);font-size:13px}
+
+  .pill{display:inline-block;padding:10px 14px;border-radius:999px;background:var(--sun);color:var(--bordo);font-weight:700;border:0;cursor:pointer}
+  .pill:hover{transform:translateY(-3px);background:var(--beige)}
+
+  .test-list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+  .test-item{background:var(--card);padding:12px;border-radius:10px;color:var(--bordo);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+
+  .contact input,.contact select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.2);margin-top:8px;background:transparent;color:var(--bordo)}
+
+  footer{margin-top:18px;text-align:center;color:var(--beige);font-size:13px;padding:12px;background:var(--bordo)}
+  footer a{color:var(--sun)}
+  
+  .reveal{opacity:0;transform:translateY(28px);transition:all .85s cubic-bezier(.2,.9,.3,1)}
+  .reveal.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="site" role="document" aria-label="Сайт Наргиза">
+  <main class="board" role="main">
+    <section class="hero">
+      <div class="hero-left reveal">
+        <div class="kicker">Merhaba</div>
+        <h1 class="title">Я Наргиза</h1>
+        <p class="lead">Уже 6 лет живу в Турции, закончила здесь университет и работаю архитектором. Помогаю абитуриентам и иммигрантам: с жильём, документами, ВНЖ, поступлением и адаптацией. Моя цель — чтобы вы чувствовали себя в Турции как дома.</p>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">Записаться</button>
+          <button class="btn btn-soft" onclick="openTelegram()">Написать в Telegram</button>
+        </div>
+      </div>
+
+      <aside class="hero-right float">
+        <div class="profile" id="profile" style="background-image:url('2025-09-29 21.46.31.jpg');"></div>
+        <div class="profile-meta">
+          <h4>Наргиза — архитектор</h4>
+          <p>6 лет в Турции — сопровождение переезда, ВНЖ и поступлений</p>
+        </div>
+      </aside>
+    </section>
+
+    <div class="masonry" id="masonry">
+      <article class="pin reveal">
+        <img src="https://i.pinimg.com/1200x/00/91/52/009152c257950b747ede76ce468da308.jpg" alt="Квартира в Стамбуле" onerror="this.src='https://source.unsplash.com/800x900/?istanbul,apartment'">
+        <div class="pin-body">
+          <h3 class="pin-title">Квартира в Стамбуле • Kadikoy</h3>
+          <p class="pin-desc">Подбор жилья, сопровождение просмотров и проверка договора.</p>
+        </div>
+      </article>
+
+      <article class="pin reveal">
+        <img src="https://i.pinimg.com/736x/a7/a5/c3/a7a5c343232497e257f69f5e9ae3cc76.jpg" alt="ВНЖ" onerror="this.src='https://source.unsplash.com/800x900/?documents'">
+        <div class="pin-body">
+          <h3 class="pin-title">Оформление ВНЖ</h3>
+          <p class="pin-desc">Чек-лист, подача, переводы и сопровождение.</p>
+        </div>
+      </article>
+
+      <article class="pin reveal">
+        <img src="https://i.pinimg.com/736x/78/d5/50/78d5505259e64a6fd992aa952272886c.jpg" alt="Поступление" onerror="this.src='https://source.unsplash.com/800x900/?university,turkey'">
+        <div class="pin-body">
+          <h3 class="pin-title">Поступление в вузы</h3>
+          <p class="pin-desc">Подготовка документов, выбор программы и сопровождение.</p>
+        </div>
+      </article>
+
+      <article class="pin reveal">
+        <img src="https://i.pinimg.com/736x/42/2f/62/422f6282c4aebbc4faf063a1e4a2a338.jpg" alt="Адаптация" onerror="this.src='https://source.unsplash.com/800x900/?city,life'">
+        <div class="pin-body">
+          <h3 class="pin-title">Адаптация</h3>
+          <p class="pin-desc">Поддержка в бытовых вопросах, интеграция, языковые советы.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="panel reveal">
+      <h5>Популярные услуги</h5>
+      <p>Жильё • ВНЖ • Поступление • Адаптация</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="pill" onclick="scrollToSection('masonry')">Каталог</button>
+        <button class="pill" onclick="scrollToSection('contact')">Записаться</button>
+      </div>
+    </div>
+
+    <div class="panel reveal">
+      <h5>Коротко обо мне</h5>
+      <p>Архитектор, 6 лет в Турции. Индивидуальный подход и проверенные решения.</p>
+    </div>
+
+    <div class="panel reveal" id="contact">
+      <h5>Быстрая заявка</h5>
+      <p>Оставьте контакт — я свяжусь в течение 24 часов</p>
+      <div class="contact">
+        <input id="lead-name" placeholder="Имя">
+        <input id="lead-contact" placeholder="Email или @telegram">
+        <select id="lead-service">
+          <option value="">Выберите услугу</option>
+          <option>Жильё</option>
+          <option>ВНЖ</option>
+          <option>Поступление</option>
+          <option>Адаптация</option>
+        </select>
+        <button class="pill" style="width:100%;margin-top:10px" onclick="submitLead()">Отправить</button>
+        <div id="lead-msg" style="margin-top:8px;font-size:13px;color:var(--bordo)"></div>
+      </div>
+    </div>
+
+    <div class="panel reveal">
+      <h5>Отзывы</h5>
+      <div class="test-list">
+        <div class="test-item">«Наргиза нашла идеальный вариант и помогла с договором»</div>
+        <div class="test-item">«Всё прошло быстро и профессионально»</div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  © 2025 Наргиза — помощь с переездом в Турцию • <a href="#">Instagram</a> • <a href="#">Telegram</a>
+</footer>
+
+<script>
+(function(){
+  const nodes = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.12});
+  nodes.forEach(n => io.observe(n));
+})();
+
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function openTelegram(){ window.open('https://t.me/nargizammt','_blank') }
+
+function submitLead(){
+  const name = document.getElementById('lead-name').value.trim();
+  const contact = document.getElementById('lead-contact').value.trim();
+  const service = document.getElementById('lead-service').value;
+  const msg = document.getElementById('lead-msg');
+  if(!name || !contact || !service){ msg.textContent = 'Пожалуйста, заполните все поля.'; return; }
+  msg.textContent = 'Спасибо — заявка получена! Я свяжусь в течение 24 часов.';
+  setTimeout(()=>{ msg.textContent=''; }, 3000);
+}
+
+(function(){
+  const p = document.getElementById('profile');
+  if(p){
+    const bg = getComputedStyle(p).backgroundImage;
+    if(!bg || bg === 'none' || bg.includes('images/profile.jpg')) p.style.backgroundImage = "url('https://source.unsplash.com/800x600/?portrait,turkey')";
+  }
+})();
+
+(function(){
+  const pins = document.querySelectorAll('.pin');
+  pins.forEach((p,i) => setTimeout(()=> p.classList.add('show'), 250 + i*120));
+})();
+</script>
+</body>
+</html>
