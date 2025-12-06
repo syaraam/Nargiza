@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Центральный парк Горького Алматы — интерактивный лонгрид</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:#f4f0e8;
+  color:#242424;
+  line-height:1.7;
+}
+.wrapper{
+  max-width:1100px;
+  margin:auto;
+  padding:24px 16px 72px;
+}
+.card{
+  background:#fff;
+  border-radius:24px;
+  padding:32px;
+  margin-bottom:36px;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+.hero{
+  display:flex;
+  flex-wrap:wrap;
+  gap:28px;
+  align-items:center;
+}
+.hero-text{flex:1 1 340px}
+.hero-kicker{
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#8c8679;
+}
+.hero h1{
+  font-size:36px;
+  margin:10px 0;
+}
+.hero p{
+  font-size:15px;
+  color:#4d4d44;
+}
+.hero-media{
+  flex:1 1 320px;
+  border-radius:20px;
+  overflow:hidden;
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.section-kicker{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#9c9584;
+  margin-bottom:4px;
+}
+h2{margin:8px 0 12px}
+
+/* маршрут */
+.route{
+  display:grid;
+  grid-template-columns:1fr 1.7fr;
+  gap:24px;
+}
+.route button{
+  width:100%;
+  margin-bottom:10px;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid #ddd3c3;
+  background:#f8f4ec;
+  cursor:pointer;
+  font-size:14px;
+  text-align:left;
+}
+.route button.active{
+  background:#242424;
+  color:#fff;
+}
+.route-panel{
+  background:#f8f4ec;
+  border-radius:20px;
+  padding:22px;
+  font-size:14px;
+}
+
+/* инфографика */
+.infographic{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+}
+.info{
+  background:#f8f4ec;
+  border-radius:18px;
+  padding:18px;
+}
+.info b{font-size:22px}
+
+/* медиа */
+.media{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:22px;
+}
+audio,video{
+  width:100%;
+  border-radius:18px;
+}
+
+/* галерея */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+}
+.gallery img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+/* игра */
+.game{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:22px;
+}
+.game-card{
+  background:#f8f4ec;
+  border-radius:20px;
+  padding:20px;
+}
+.game-card button{
+  display:block;
+  margin-top:10px;
+  border-radius:999px;
+  border:1px solid #d5cdbc;
+  padding:10px 18px;
+  background:#fff;
+  cursor:pointer;
+}
+footer{
+  text-align:center;
+  font-size:11px;
+  color:#99927f;
+}
+
+@media(max-width:820px){
+  .hero,.route,.media,.game{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+<!-- HERO -->
+<div class="card hero">
+  <div class="hero-text">
+    <div class="hero-kicker">интерактивный лонгрид</div>
+    <h1>Центральный парк Горького Алматы</h1>
+    <p>
+      Центральный парк культуры и отдыха имени Горького — одно из ключевых
+      общественных пространств Алматы, в котором отражается история города,
+      изменения городской среды и представления о досуге разных эпох.
+    </p>
+    <p>
+      Этот лонгрид предлагает пройти парк как интерактивный маршрут —
+      от его основания до современного состояния.
+    </p>
+  </div>
+  <div class="hero-media">
+    <img src="https://i.pinimg.com/736x/c2/1e/73/c21e735121d35690e2957f4c0529b062.jpg">
+  </div>
+</div>
+
+<!-- ИСТОРИЯ -->
+<div class="card">
+  <div class="section-kicker">история парка</div>
+  <h2>Формирование и развитие</h2>
+  <p>
+    Парк Горького был основан в 1856 году как Казённый сад —
+    одно из первых озеленённых общественных пространств города Верного.
+    Его главной задачей было создание комфортной среды в условиях жаркого климата,
+    формирование культуры городских прогулок и отдыха.
+  </p>
+  <p>
+    В конце XIX — начале XX века сад постепенно расширялся:
+    высаживались новые деревья, появлялись аллеи, беседки и зоны отдыха.
+    Парк становился важной частью городской структуры.
+  </p>
+  <p>
+    В 1930-е годы парк был реорганизован в Центральный парк культуры и отдыха.
+    Этот период стал переломным: изменились функции парка,
+    усилилась его роль как культурного и развлекательного центра города.
+  </p>
+  <p>
+    В советские десятилетия Парк Горького окончательно закрепился
+    как главное место семейного досуга,
+    где проходили праздники, концерты и работали аттракционы.
+  </p>
+</div>
+
+<!-- МАРШРУТ -->
+<div class="card">
+  <div class="section-kicker">маршрут</div>
+  <h2>Парк как путешествие во времени</h2>
+
+  <div class="route">
+    <div>
+      <button class="active" onclick="showRoute(0)">XIX век — Казённый сад</button>
+      <button onclick="showRoute(1)">1930-е — Парк культуры</button>
+      <button onclick="showRoute(2)">1960–1980-е — Советский парк</button>
+      <button onclick="showRoute(3)">После 2000-х — современный парк</button>
+    </div>
+
+    <div class="route-panel" id="route-panel">
+      <b>XIX век — начало</b>
+      <p>
+        На этом этапе парк выполнял функцию городского сада.
+        Здесь гуляли горожане, отдыхали от городской застройки,
+        а зелёные насаждения играли важную роль в формировании
+        комфортного климата.
+      </p>
+      <p>
+        Парк не был развлекательным пространством —
+        это было место спокойного отдыха и прогулок.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- КЛЮЧЕВАЯ ТОЧКА -->
+<div class="card">
+  <div class="section-kicker">ключевая точка</div>
+  <h2>Колесо обозрения</h2>
+  <p>
+    Колесо обозрения стало одним из самых узнаваемых элементов Парка Горького.
+    Оно появилось в советский период и быстро стало символом детства
+    и семейного отдыха.
+  </p>
+  <p>
+    С высоты колеса открывается вид не только на парк,
+    но и на город Алматы и горы Заилийского Алатау,
+    что делает его важной точкой визуального восприятия города.
+  </p>
+</div>
+
+<!-- ИНФОГРАФИКА -->
+<div class="card">
+  <div class="section-kicker">инфографика</div>
+  <h2>Зачем городу нужен парк</h2>
+  <div class="infographic">
+    <div class="info"><b>Экология</b><br>зелёная зона и кислород</div>
+    <div class="info"><b>Отдых</b><br>пространство для всех возрастов</div>
+    <div class="info"><b>Культура</b><br>праздники, события, встречи</div>
+    <div class="info"><b>Память</b><br>часть истории города</div>
+  </div>
+</div>
+
+<!-- МУЛЬТИМЕДИА -->
+<div class="card">
+  <div class="section-kicker">мультимедиа</div>
+  <h2>Парк в движении и звуке</h2>
+  <div class="media">
+    <video controls src="/Users/mametzanovasaara/Downloads/5542599691851847164.MP4"></video>
+    <audio controls src="/Users/mametzanovasaara/Downloads/823080709 2.mp3"></audio>
+  </div>
+</div>
+
+<!-- ИГРА -->
+<div class="card">
+  <div class="section-kicker">интерактив</div>
+  <h2>Мини-игра: угадай эпоху</h2>
+  <div class="game">
+    <div class="game-card">
+      <p>
+        В какой период Парк Горького стал
+        Центральным парком культуры и отдыха?
+      </p>
+      <button onclick="win()">1930-е годы</button>
+      <button onclick="lose()">1890-е годы</button>
+      <button onclick="lose()">1990-е годы</button>
+    </div>
+    <div class="game-card" id="game-result">
+      Выберите вариант ответа
+    </div>
+  </div>
+</div>
+
+<footer>
+Учебный проект · Центральный парк Горького, Алматы
+</footer>
+
+</div>
+
+<script>
+function showRoute(i){
+  const content=[
+    `<b>XIX век — Казённый сад</b>
+     <p>
+       Парк задумывался как зелёный остров города,
+       выполняющий санитарно-экологическую функцию и
+       формирующий культуру городского отдыха.
+     </p>
+     <p>
+       Здесь не было аттракционов —
+       главным было само пребывание на природе.
+     </p>`,
+    `<b>1930-е — Парк культуры</b>
+     <p>
+       В этот период парк получает новое назначение:
+       он становится пространством активного отдыха и
+       массовых культурных мероприятий.
+     </p>
+     <p>
+       Появляются аттракционы, архитектурные элементы,
+       формируется знакомый образ парка.
+     </p>`,
+    `<b>1960–1980-е — Советский период</b>
+     <p>
+       Парк окончательно закрепляется как
+       главное семейное пространство города.
+     </p>
+     <p>
+       Колесо обозрения, карусели и праздники
+       становятся частью культурной памяти горожан.
+     </p>`,
+    `<b>После 2000-х — Современность</b>
+     <p>
+       Сегодня Парк Горького объединяет
+       историческое наследие и современные формы отдыха.
+     </p>
+     <p>
+       Здесь проходят фестивали, прогулки и
+       повседневный городской досуг.
+     </p>`
+  ];
+  document.getElementById("route-panel").innerHTML=content[i];
+  document.querySelectorAll(".route button").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".route button")[i].classList.add("active");
+}
+
+function win(){
+  document.getElementById("game-result").innerHTML=
+    "✅ Верно! Именно в 1930-е годы парк стал Центральным парком культуры и отдыха.";
+}
+function lose(){
+  document.getElementById("game-result").innerHTML=
+    "❌ Неверно. Подумай о периоде активных преобразований города.";
+}
+</script>
+
+</body>
+</html>
