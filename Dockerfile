@@ -1,2 +1,5 @@
-FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/
+FROM node:alpine
+WORKDIR /app
+COPY . .
+RUN npm install -g serve
+CMD ["serve", "-s", ".", "-l", "tcp://0.0.0.0:$PORT"]
