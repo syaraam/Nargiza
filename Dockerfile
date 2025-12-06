@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY index.html .
+COPY project.html .
 
 RUN pip install http.server
 
